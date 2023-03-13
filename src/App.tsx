@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Paper } from "@mui/material";
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import RecentPost from "./components/RecentPost";
+import FollowNoti from "./components/FollowNoti";
+import GroupJoining from "./components/GroupJoining";
+import PrivateMessage from "./components/PrivateMessage";
+import PictureComment from "./components/PictureComment";
+import RecentPost2 from "./components/RecentPost2";
+import LeaveGroup from "./components/LeaveGroup";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Box
+        sx={{
+          minWidth: "100vw",
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Paper
+          sx={{
+            p: 3,
+            maxWidth: "650px",
+          }}
+          elevation={3}
         >
-          Learn React
-        </a>
-      </header>
+          <Header />
+          <RecentPost active={true} />
+          <FollowNoti active={true} />
+          <GroupJoining active={true} />
+          <PrivateMessage />
+          <PictureComment />
+          <RecentPost2 />
+          <LeaveGroup />
+        </Paper>
+      </Box>
     </div>
   );
 }
